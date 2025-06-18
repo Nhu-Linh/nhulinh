@@ -1,0 +1,244 @@
+/* Reset */
+* {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+
+/* Cấu hình font và nền */
+body {
+font-family: 'Poppins', sans-serif;;
+background-color: #ffe3ec;
+color: #333;
+line-height: 1.6;
+scroll-behavior: smooth;
+}
+
+/* Tiêu đề chính */
+header h1 {
+text-align: center;
+padding: 20px;
+color: #5a1a3c;
+animation: fadeDown 1s ease-in-out;
+}
+
+/* Navbar */
+.nav-bar {
+display: flex;
+justify-content: center;
+gap: 30px;
+background-color: #c471a3;
+padding: 10px 0;
+border-radius: 8px;
+animation: slideIn 1.2s ease-in-out;
+}
+
+.nav-bar li {
+list-style: none;
+}
+
+.nav-bar a {
+text-decoration: none;
+color: white;
+font-weight: bold;
+transition: transform 0.3s, background-color 0.3s;
+padding: 6px 12px;
+border-radius: 5px;
+}
+
+.nav-bar a:hover {
+background-color: #a24d83;
+transform: scale(1.1);
+}
+
+/* Container chính */
+.cv-container {
+display: flex;
+flex-wrap: wrap;
+padding: 20px;
+gap: 20px;
+}
+
+/* Sidebar trái */
+.sidebar {
+flex: 1;
+min-width: 280px;
+animation: slideFromLeft 1s ease-in-out;
+}
+
+.profile {
+text-align: center;
+margin-bottom: 20px;
+}
+
+.avatar {
+ width: 150px;
+height: 150px;
+border-radius: 50%;
+object-fit: cover;
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+transition: transform 0.3s ease;
+display: block;
+margin: 0 auto 10px auto; /* Căn giữa ảnh */
+border: 3px solid #fff;
+
+}
+
+.avatar:hover {
+transform:  scale(1.1) rotate(2deg);
+}
+
+.name {
+font-family:  'Dancing Script', cursive;
+font-size: 24px;
+font-weight: bold;
+color: #333;
+text-align: center;
+}
+
+.name {
+font-size: 1.4em;
+font-weight: bold;
+text-align: center;
+margin-bottom: 20px;
+}
+
+/* Nội dung chính */
+.main {
+flex: 2;
+min-width: 300px;
+animation: slideFromRight 1s ease-in-out;
+}
+
+/* Box nội dung */
+.box {
+background-color: #fff;
+border-radius: 12px;
+padding: 20px;
+margin-bottom: 20px;
+box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.box:hover {
+transform: translateY(-5px) scale(1.01);
+box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+h2 {
+color: #a93c74;
+margin-bottom: 10px;
+position: relative;
+}
+
+h2::after {
+content: "";
+display: block;
+width: 50px;
+height: 3px;
+background-color: #a93c74;
+margin-top: 5px;
+border-radius: 2px;
+}
+
+/* Hiệu ứng animation */
+@keyframes slideIn {
+from {
+transform: translateY(-50px);
+opacity: 0;
+}
+to {
+transform: translateY(0);
+opacity: 1;
+}
+}
+
+@keyframes fadeDown {
+from {
+opacity: 0;
+transform: translateY(-20px);
+}
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
+
+@keyframes slideFromLeft {
+from {
+ opacity: 0;
+ transform: translateX(-100px);
+ }
+ to {
+opacity: 1;
+transform: translateX(0);
+ }
+}
+
+@keyframes slideFromRight {
+from {
+opacity: 0;
+transform: translateX(100px);
+}
+to {
+opacity: 1;
+transform: translateX(0);
+}
+}
+
+@keyframes fadeIn {
+from {
+opacity: 0;
+}
+to {
+opacity: 1;
+}
+}
+
+a {
+color: #0077cc;
+}
+
+a:hover {
+text-decoration: underline;
+}
+#kynang p {
+background-color: #fbeaf2;
+padding: 8px 12px;
+margin-bottom: 10px;
+border-radius: 8px;
+transition: transform 0.3s ease, background-color 0.3s ease;
+box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+display: flex;
+justify-content: space-between;
+font-weight: 500;
+}
+
+#kynang p:hover {
+transform: scale(1.03);
+background-color: #f3d0e1;
+}
+
+#kynang p::after {
+content: "";
+flex: 1;
+margin-left: 10px;
+height: 8px;
+border-radius: 5px;
+background: linear-gradient(to right, #ff6aa5, #f59ac3);
+animation: animateBar 2s ease forwards;
+transform-origin: left;
+transform: scaleX(var(--scale, 0));
+}
+
+/* Tùy chỉnh từng dòng cụ thể theo % */
+#kynang p:nth-child(2) { --scale: 0.9; }   /* HTML - 90% */
+#kynang p:nth-child(3) { --scale: 0.85; }  /* CSS - 85% */
+#kynang p:nth-child(4) { --scale: 0.7; }   /* JS - 70% */
+#kynang p:nth-child(5) { --scale: 0.75; }  /* Git - 75% */
+#kynang p:nth-child(6) { --scale: 0.8; }   /* VS Code - 80% */
+
+@keyframes animateBar {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(var(--scale)); }
+}
